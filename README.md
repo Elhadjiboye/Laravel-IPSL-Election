@@ -1,66 +1,20 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Smart-Vote: Système de Vote En Ligne pour les Élections à l'IPSL (Institut Polytechnique de Saint-Louis)
+Smart-Vote est une application web conçue pour simplifier le processus électoral à l'Institut Polytechnique de Saint-Louis (IPSL). Elle permet aux utilisateurs d'ajouter des postes, des candidats et des électeurs, de gérer la distribution des bulletins de vote, et de visualiser le décompte des votes. Les électeurs peuvent se connecter à leur compte et accéder au bulletin de vote.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Technologies Utilisées
+Smart-Vote a été développé en utilisant les technologies suivantes :
 
-## About Laravel
+Laravel : un framework PHP pour le développement web.
+Laravel Breeze : un starter kit minimaliste pour Laravel, fournissant l'authentification par défaut.
+MVC (Modèle-Vue-Contrôleur) : un modèle de conception logicielle pour structurer l'application.
+## Fonctionnalités
+Ajout de Postes, Candidats et Électeurs : Les utilisateurs peuvent ajouter de nouveaux postes à pourvoir lors des élections, ainsi que les candidats qui se présentent à ces postes. Ils peuvent également enregistrer les électeurs éligibles pour voter.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Gestion des Bulletins de Vote : L'application permet de gérer la distribution des bulletins de vote de manière efficace, en veillant à ce que chaque électeur reçoive un bulletin correspondant à son droit de vote.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Décompte des Votes : Les résultats des élections sont calculés et affichés en temps réel, offrant ainsi une transparence totale sur le déroulement du processus électoral.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Authentification des Utilisateurs : Les électeurs peuvent se connecter à leur compte pour accéder au bulletin de vote et exercer leur droit de vote de manière sécurisée.
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Objectif
+Smart-Vote s'engage à rendre le processus électoral à l'IPSL plus excitant et accessible à tous les membres de la communauté, y compris les étudiants, les enseignants et le personnel administratif. L'application met l'accent sur la transparence et offre des fonctionnalités pour suivre de près le déroulement des élections et vérifier les votes.

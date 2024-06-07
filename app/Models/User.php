@@ -2,14 +2,25 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+//use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 
-class User extends Authenticatable
+
+class User extends Authenticatable 
 {
     use HasFactory, Notifiable;
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($user) {
+            $user->id_electeur = Str::random(15); // Génère une nouvelle valeur pour id_electeur
+        });
+    }
 
     /**
      * The attributes that are mass assignable.
@@ -17,9 +28,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
+        'prenom_electeur',
+        'nom_electeur',
+        'prenom_electeur',
         'password',
+        'email',
+        'photo',
     ];
 
     /**
