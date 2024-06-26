@@ -4,14 +4,14 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Candidat;
-use App\Models\Poste;
+use App\Models\candidat;
+use App\Models\poste;
 
 class CandidatController extends Controller
 {
         public function index_candidat(){
           $candidats=candidat::paginate(100);
-          $postes = Poste::all();
+          $postes = poste::all();
            return view('admin.candidat.index_candidat',compact('candidats','postes'));
        }
 
@@ -23,16 +23,16 @@ class CandidatController extends Controller
 
 
 
-       public function edit_candidat(Candidat $candidat){
+       public function edit_candidat(candidat $candidat){
            return view('admin.candidat.edit_candidat',compact('candidat'));
        }
-       public function delete_candidat(Candidat $candidat){
+       public function delete_candidat(candidat $candidat){
            return view('admin.candidat.delete_candidat',compact('candidat'));
        }
 
 //Action avec la BD
 
-public function store_candidat(Candidat $candidat, Request $request)
+public function store_candidat(candidat $candidat, Request $request)
 {
     try {
         $request->validate([
@@ -69,14 +69,14 @@ public function store_candidat(Candidat $candidat, Request $request)
 
 
 
-       public function update_candidat(Candidat $candidat, Request $request)
+       public function update_candidat(candidat $candidat, Request $request)
        {
            try {
                 $candidat->prenom_candidat = $request->prenom_candidat;
                 $candidat->nom_candidat = $request->nom_candidat;
                 $candidat->mail_candidat = $request->mail_candidat;
                 $candidat->id_poste = $request->poste; // Assurez-vous que le nom du champ correspond à celui de la base de données
-                if ($request->has('photo')) {
+                if ($request->hasFile('photo')) {
                     $candidat->photo = $request->photo->store('photos', 'public'); // Assurez-vous que le nom du champ correspond à celui de la base de données et que vous stockez correctement l'image
                 }
                 if ($request->has('platform')) {
@@ -92,7 +92,7 @@ public function store_candidat(Candidat $candidat, Request $request)
            }
        }
 
-       public function delete(Candidat $candidat)
+       public function delete(candidat $candidat)
        {
            try {
                $candidat->delete();

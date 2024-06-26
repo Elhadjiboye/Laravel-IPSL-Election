@@ -4,6 +4,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\admin\PosteController;
 use App\Http\Controllers\admin\CandidatController;
 use App\Http\Controllers\admin\ElecteurController;
+use App\Http\Controllers\admin\VoteController;
+use App\Http\Controllers\admin\ScrutinController;
+use App\Http\Controllers\admin\TitreController;
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\ImportElecteurController;
 
@@ -24,9 +27,10 @@ Route::get('/home_admin', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/prphp artisan serve
-ofile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    
 });
+
 Route::middleware(['auth', 'verified'])->group(function (){
     Route::get('/home_admin', [AdminController::class, 'compteadmin'])->name('Compte_admin');
 
@@ -64,6 +68,19 @@ Route::middleware(['auth', 'verified'])->group(function (){
         Route::post('/', [ElecteurController::class, 'import'])->name('electeur.excel.import');
 
         });
+    Route::prefix('vote')->group(function (){
+        Route::get('/', [VoteController::class, 'index_vote'])->name('vote.index_vote');
+        Route::post('/renitialisation', [VoteController::class, 'resetVotes'])->name('vote.reset_vote');    
+         });
+    Route::prefix('scrutin')->group(function (){
+        Route::get('/', [ScrutinController::class, 'index_scrutin'])->name('scrutin.index_scrutin');
+        //Route::post('/renitialisation', [ScrutinController::class, 'resetVotes'])->name('vote.reset_vote');    
+         });
+    Route::prefix('TitreVote')->group(function (){
+        Route::get('/titre_vote', [TitreController::class, 'index_titre'])->name('titre_vote.index_titre');    
+        Route::put('/titre_vote', [TitreController::class, 'savesConfig'])->name('titre_vote.save_titre');    
+        });
+        
 });
 
 require __DIR__.'/auth.php';

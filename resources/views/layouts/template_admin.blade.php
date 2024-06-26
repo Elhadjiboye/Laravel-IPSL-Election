@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
   	<meta charset="utf-8">
   	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,14 +17,13 @@
     <link rel="stylesheet" href="{{asset('../assets1/css/skins/_all-skins.min.css')}}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <script defer src="{{asset('assets/plugins/fontawesome/js/all.min.js')}}"></script>
-
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
   	<style type="text/css">
       .bold{
         font-weight:bold;
       }
-
+      
       #candidate_list{
         margin-top:20px;
       }
@@ -34,8 +32,8 @@
         list-style-type:none;
       }
 
-      #candidate_list ul li{
-        margin:0 30px 30px 0;
+      #candidate_list ul li{ 
+        margin:0 30px 30px 0; 
         vertical-align:top
       }
 
@@ -47,109 +45,20 @@
         font-size: 25px;
       }
   	</style>
-</head><body class="hold-transition skin-blue sidebar-mini">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
 
      <header class="main-header">
       @include('layouts.topbar')
      </header>
-<!-- ADMIN PROFILE MODAL -->
-<div class="modal fade" id="profile">
-    <div class="modal-dialog">
-        <div class="modal-content">
-          	<div class="modal-header">
-            	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Profil de l'administrateur</b></h4>
-          	</div>
-          	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="profile_update.php?return=home.php" enctype="multipart/form-data">
-          		  <div class="form-group">
-                  	<label for="Prenom" class="col-sm-3 control-label">Prenom</label>
+     
+     @include('admin.profil.update_profil')
 
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="Prenom" name="Prenom" value="Abdou">
-                  	</div>
-                </div>
-                <div class="form-group">
-                  	<label for="nom" class="col-sm-3 control-label">Nom</label>
-
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="nom" name="nom" value="Boye">
-                  	</div>
-                </div>
-
-                <div class="form-group">
-                    <label for="mot de passe" class="col-sm-3 control-label">Mot de passe</label>
-                    <div class="col-sm-9">
-                      <input type="password" class="form-control" id="mot de passe" name="mot de passe" value="dark">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                  	<label for="mail" class="col-sm-3 control-label">Adresse email</label>
-
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="mail" name="mail" value="admin@gmail.com">
-                  	</div>
-                </div>
-
-                <div class="form-group">
-                    <label for="photo" class="col-sm-3 control-label">Photo de profil : </label>
-
-                    <div class="col-sm-9">
-                      <input type="file" id="photo" name="photo">
-                    </div>
-                </div>
-                <hr>
-                <div class="form-group">
-                    <label for="curr_password" class="col-sm-3 control-label">Mot de passe actuel :</label>
-
-                    <div class="col-sm-9">
-                      <input type="password" class="form-control" id="curr_password" name="curr_password" placeholder="Saisissez le mot de passe actuel pour enregistrer les modifications." required>
-                    </div>
-                </div>
-          	</div>
-          	<div class="modal-footer">
-            	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Annuler</button>
-            	<button type="submit" class="btn btn-success btn-flat" name="save"><i class="fa fa-check-square-o"></i> Sauvegarder</button>
-            	</form>
-          	</div>
-        </div>
     </div>
-</div>
-@include('layouts.sidebar')
-<!-- CONFIG / SETTINGS FOR THE TITLE OF VOTING SYSTEM IN ADMIN DASHBOARD -->
-<div class="modal fade" id="config">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Configuration du Titre de l'Election</b></h4>
-            </div>
-            <div class="modal-body">
-              <div class="text-center">
-                                <form class="form-horizontal" method="POST" action="config_save.php?return=home.php">
-                  <div class="form-group">
-                    <label for="title" class="col-sm-3 control-label">Titre</label>
-
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="title" name="title" value="Election IPSL 2023">
-                    </div>
-                  </div>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Annuler</button>
-              <button type="submit" class="btn btn-success btn-flat" name="save"><i class="fa fa-save"></i> Sauvegarder</button>
-              </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-     <div class="content-wrapper">
+    @include('layouts.sidebar')
+    @include('admin.titre_vote.update_titre')
+<div class="content-wrapper">
       @yield ('content')
      </div>
 
@@ -169,6 +78,10 @@
 <script src="{{asset('../bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
 <script src="{{asset('../bower_components/fastclick/lib/fastclick.js')}}"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<!-- Inclure jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 
 <script src="{{asset('../plugins/iCheck/icheck.min.js')}}"></script>
@@ -195,17 +108,34 @@
 
   });
 </script>
+
 <script>
   $(function () {
-    $('#example1').DataTable()
-    $('#example2').DataTable({
+    $('#example1').DataTable({
+            "language": {
+                "search": "Rechercher :",
+                "lengthMenu": "Afficher _MENU_ éléments",
+                "info": "Affichage de l'élément _START_ à _END_ sur _TOTAL_ éléments",
+                "infoEmpty": "Affichage de l'élément 0 à 0 sur 0 élément",
+                "infoFiltered": "(filtré à partir de _MAX_ éléments au total)",
+                "loadingRecords": "Chargement...",
+                "zeroRecords": "Aucun élément correspondant trouvé",
+                "paginate": {
+                    "first": "Premier",
+                    "last": "Dernier",
+                    "next": "Suivant",
+                    "previous": "Précédent"
+                }
+            }
+        });
+    /*$('#example2').DataTable({
       'paging'      : true,
       'lengthChange': false,
-      'searching'   : false,
+      'searching'   : true,
       'ordering'    : true,
       'info'        : true,
-      'autoWidth'   : false
-    });
+      'autoWidth'   : true
+    });*/
   });
 </script>
 
@@ -290,5 +220,6 @@ function getRow(id){
       }
   }
 </script>
+
       </body>
 </html>

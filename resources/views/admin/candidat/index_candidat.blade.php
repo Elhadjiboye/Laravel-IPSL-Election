@@ -16,15 +16,16 @@ Gérer les candidats
               <a href="#" data-toggle="modal" data-target="#addnew" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nouveau</a>
             </div>
             <div class="box-body">
-              <table id="example2" class="table table-bordered">
+              <table id="example1" class="table table-bordered">
                 <thead>
-                    <th class="hidden"></th>
-                    <th class="text-center">Poste</th>
-                    <th class="text-center">Profil</th>
-                    <th class="text-center">Prénom</th>
-                    <th class="text-center">Nom</th>
-                    <th class="text-center">Programme</th>
-                    <th class="text-center">Actions</th>
+                  <tr>
+                      <th class="text-center">Poste</th>
+                      <th class="text-center">Profil</th>
+                      <th class="text-center">Prénom</th>
+                      <th class="text-center">Nom</th>
+                      <th class="text-center">Programme</th>
+                      <th class="text-center">Actions</th>
+                  </tr>
                 </thead>
 
                 <tbody>
@@ -56,7 +57,7 @@ Gérer les candidats
                             </tr>
                         @empty
                             <tr>
-                                <td classe = "cell" colspan='6'> Aucun Candidat Ajoutés</td>
+                                <td classe = "cell text-center" colspan='6'> Aucun Candidat Ajoutés</td>
                             </tr>
                         @endforelse
 

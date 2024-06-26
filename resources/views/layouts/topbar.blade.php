@@ -11,15 +11,16 @@
       <ul class="nav navbar-nav">
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="../images/416358777_3668867666660157_6110406702182314110_n.jpg" class="user-image" alt="User Image">
-            <span class="hidden-xs">Abdou Boye</span>
+            
+            <img src="https://ui-avatars.com/api/?name={{auth()->user()->prenom_electeur}}+{{auth()->user()->nom_electeur}}&background=0D8ABC&color=fff" class="user-image" alt="User Image">
           </a>
           <ul class="dropdown-menu">
             <li class="user-header">
-              <img src="../images/416358777_3668867666660157_6110406702182314110_n.jpg" class="img-circle" alt="User Image">
+              
+              <img src="https://ui-avatars.com/api/?name={{auth()->user()->prenom_electeur}}+{{auth()->user()->nom_electeur}}&background=0D8ABC&color=fff" class="img-circle" alt="User Image">
 
               <p>
-                Abdou Boye                <small>Administrateur</small>
+              {{auth()->user()->prenom_electeur}} <small>Administrateur</small>
               </p>
             </li>
             <li class="user-footer">
@@ -27,7 +28,7 @@
                 <a href="#profile" data-toggle="modal" class="btn btn-default btn-flat" id="admin_profile">Paramètres</a>
               </div>
               <div class="pull-right">
-                <a href="logout.php" class="btn btn-default btn-flat">Déconnexion</a>
+                <a href="{{route('logout')}}" class="btn btn-default btn-flat">Déconnexion</a>
               </div>
             </li>
           </ul>

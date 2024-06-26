@@ -16,14 +16,15 @@
                 <div class="box-body">
                     <table id="example1" class="table table-bordered">
                         <thead>
-                            <th class="hidden"></th>
+                            <tr>
                                 <th class="text-center">Type Election</th>
                                 <th class="text-center">Maximum Vote</th>
                                 <th class="text-center">Date Debut</th>
                                 <th class="text-center">Date Fin</th>
                                 <th class="text-center">Actions</th>
-
+                            </tr>
                         </thead>
+                        
                         <tbody>
                             @forelse ( $postes as $poste )
                             <tr>
@@ -31,9 +32,7 @@
                                 <td class='cell text-center'>{{ $poste->max_vote }}</td>
                                 <td class='cell text-center'>{{ \Carbon\Carbon::parse($poste->date_debut)->format('Y-m-d H:i') }}</td>
                                 <td class='cell text-center'>{{ \Carbon\Carbon::parse($poste->date_fin)->format('Y-m-d H:i') }}</td>
-
-
-                                    <td class="text-center">
+                                <td class="text-center">
                                         <a href="#" data-toggle="modal" data-target="#editModal{{ $poste->id_poste }}" class="btn btn-success btn-sm btn-flat">
                                             <i class="fa fa-edit"></i> Modifier
                                         </a>
@@ -42,11 +41,11 @@
                                         <a href="#" data-toggle="modal" data-target="#deleteModal{{ $poste->id_poste }}" class="btn btn-danger btn-sm btn-flat">
                                             <i class="fa fa-trash"></i> Supprimer
                                         </a>
-                                    </td>
+                                </td>
                             </tr>
                             @empty
                                 <tr>
-                                    <td class="cell" colspan='5'> Aucune Poste Ajoutées</td>
+                                    <td class="cell text-center" colspan='5'> Aucune Poste Ajoutées</td>
                                 </tr>
                             @endforelse
                         </tbody>
@@ -71,6 +70,7 @@
             </div>
         </div>
     </div>
+    
 </section>
     @include('admin.poste.edit_poste')
     @include('admin.poste.create_poste')

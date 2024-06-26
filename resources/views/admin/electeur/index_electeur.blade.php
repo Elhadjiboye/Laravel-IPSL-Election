@@ -41,12 +41,13 @@ Gérer les electeurs
               <br>
               <table id="example1" class="table table-bordered">
                 <thead>
-                    <th class="hidden"></th>
-                    <th class="text-center">ID</th>
-                    <th class="text-center">Profile</th>
-                    <th class="text-center">Prénom</th>
-                    <th class="text-center">Nom</th>
-                    <th class="text-center">Actions</th>
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Profil</th>
+                        <th class="text-center">Prénom</th>
+                        <th class="text-center">Nom</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
                 </thead>
 
                 <tbody>
@@ -67,7 +68,7 @@ Gérer les electeurs
                             </tr>
                         @empty
                             <tr>
-                                <td classe = "cell" colspan='6'> Aucun Electeur Ajoutés</td>
+                                <td classe = "cell text-center" colspan='6'> Aucun Electeur Ajoutés</td>
                             </tr>
                         @endforelse
 

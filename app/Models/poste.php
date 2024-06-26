@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class poste extends Model
+class Poste extends Model
 {
     /**
      * The primary key associated with the table.

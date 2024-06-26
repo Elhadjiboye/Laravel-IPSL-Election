@@ -4,7 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Poste;
+use App\Models\poste;
 use App\Http\Requests\SavePosteRequest;
 use Illuminate\Validation\Rule;
 use Exception; // Import de la classe Exception
@@ -18,17 +18,17 @@ class PosteController extends Controller
     public function create_poste(){
         return view('admin.poste.create_poste');
     }
-    public function edit_poste(Poste $poste){
+    public function edit_poste(poste $poste){
         return view('admin.poste.edit_poste', compact('poste'));
     }
 
-    public function delete_poste(Poste $poste){
+    public function delete_poste(poste $poste){
         return view('admin.poste.delete_poste', compact('poste'));
     }
 
     //Action avec la BD
 
-        public function store_poste(Poste $poste, Request $request)
+        public function store_poste(poste $poste, Request $request)
         {
             try {
                 $request->validate([
@@ -52,7 +52,7 @@ class PosteController extends Controller
             }
         }
 
-        public function update_poste(Poste $poste , Request $request)
+        public function update_poste(poste $poste , Request $request)
                 {
                     try {
                             $poste->type_poste = $request->type_poste;
@@ -68,7 +68,7 @@ class PosteController extends Controller
                     }
                 }
 
-        public function delete(Poste $poste)
+        public function delete(poste $poste)
                 {
                     try {
                             $poste->delete();
